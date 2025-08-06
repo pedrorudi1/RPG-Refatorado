@@ -1,6 +1,10 @@
 from abc import ABC, abstractmethod
 
 class Personagens:
+    MAX_HP = 9999
+    MAX_MP = 999
+    MAX_STATS = 255
+    
     def __init__(self, classe, name, HP, MP, strenght, magic, vitality, spirit, agility, luck):
         self.classe = classe
         self.name = name
