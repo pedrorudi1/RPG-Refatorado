@@ -15,11 +15,12 @@ class Hero(Personagens):
         self.luck = luck
     
     def lvl_up(self):
-        self.HP += round(random.randrange((5 + (0.02 * self.luck)), 15))
-        self.MP += round(random.randrange((3 + (0.02 * self.luck)), 9))
-        self.strenght += round(random.randrange((2 + (0.02 * self.luck)), 10))
-        self.magic += round(random.randrange((2 + (0.02 * self.luck)), 9))
-        self.vitality += round(random.randrange((2 + (0.02 * self.luck)), 10))
-        self.spirit += round(random.randrange((2 + (0.02 * self.luck)), 9))
-        self.agility += round(random.randrange((2 + (0.02 * self.luck)), 8))
-        self.luck += round(random.randrange((1 + (0.01 * self.luck)), 5))
+        self.HP += random.randrange(round((5 + (0.02 * self.luck))), 16)
+        self.MP += random.randrange(round((3 + (0.02 * self.luck))), 10)
+        self.strenght += random.randrange(round((2 + (0.02 * self.luck))), 9)
+        self.magic += random.randrange(round((2 + (0.02 * self.luck))), 10)
+        self.vitality += random.randrange(round((2 + (0.02 * self.luck))), 11)
+        self.spirit += random.randrange(round((2 + (0.02 * self.luck))), 10)
+        self.agility += random.randrange(round((2 + (0.02 * self.luck))), 9)
+        self.luck += random.randrange(round((1 + (0.01 * self.luck))), 6)
+
