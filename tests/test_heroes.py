@@ -1,5 +1,5 @@
 import unittest
-from Characters.Heroes import Hero, Warrior, Mage, Fighter, Thief, Priest, Ninja
+from Models.Heroes import Hero, Warrior, Mage, Fighter, Thief, Priest, Ninja
 
 class TestHeroes(unittest.TestCase):
     def setUp(self):

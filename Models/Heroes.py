@@ -102,6 +102,7 @@ class Hero(Personagens):
             self.lvl_up()
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
+
 class Warrior(Personagens):
     def __init__(self, level, name, HP, MP, strenght, magic, vitality, spirit, agility, luck, XP, XP_to_next_level):
         self.level = level
@@ -352,8 +353,6 @@ class Priest(Personagens):
         self.luck += random.randrange(round((1 + (0.004 * self.luck))), 3)
         if self.luck >= self.MAX_STATS:
             self.luck = self.MAX_STATS
-
-
 
     def gain_xp(self, amount):
         self.XP += amount
