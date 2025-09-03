@@ -42,5 +42,3 @@ class SummonMagic:
         self.creature = creature
         self.strenght = strength
         self.element = element
-
-
