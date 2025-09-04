@@ -1,7 +1,7 @@
 import random
 from Magics.MagicsList import *
 
-class Personagens:
+class Heroes:
     MAX_HP = 9999
     MAX_MP = 999
     MAX_STATS = 255
@@ -51,7 +51,7 @@ class Personagens:
         self.MP -= magic.MP_cost
 
 
-class Hero(Personagens):
+class Hero(Heroes):
     
     def __init__(self, level, name, HP, MP, strenght, magic, vitality, spirit, agility, luck, XP, XP_to_next_level):
         self.level = level
@@ -104,7 +104,7 @@ class Hero(Personagens):
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
 
-class Warrior(Personagens):
+class Warrior(Heroes):
     def __init__(self, level, name, HP, MP, strenght, magic, vitality, spirit, agility, luck, XP, XP_to_next_level):
         self.level = level
         self.name = name
@@ -156,7 +156,7 @@ class Warrior(Personagens):
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
 
-class Mage(Personagens):
+class Mage(Heroes):
     def __init__(self, level, name, HP, MP, strenght, magic, vitality, spirit, agility, luck, XP, XP_to_next_level):
         self.level = level
         self.name = name
@@ -208,7 +208,7 @@ class Mage(Personagens):
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
 
-class Fighter(Personagens):
+class Fighter(Heroes):
     def __init__(self, level, name, HP, MP, strenght, magic, vitality, spirit, agility, luck, XP, XP_to_next_level):
         self.level = level
         self.name = name
@@ -260,7 +260,7 @@ class Fighter(Personagens):
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
 
-class Thief(Personagens):
+class Thief(Heroes):
     def __init__(self, level, name, HP, MP, strenght, magic, vitality, spirit, agility, luck, XP, XP_to_next_level):
         self.level = level
         self.name = name
@@ -312,7 +312,7 @@ class Thief(Personagens):
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
 
-class Priest(Personagens):
+class Priest(Heroes):
     def __init__(self, level, name, HP, MP, strenght, magic, vitality, spirit, agility, luck, XP, XP_to_next_level):
         self.level = level
         self.name = name
@@ -364,7 +364,7 @@ class Priest(Personagens):
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
 
-class Ninja(Personagens):
+class Ninja(Heroes):
     def __init__(self, level, name, HP, MP, strenght, magic, vitality, spirit, agility, luck, XP, XP_to_next_level):
         self.level = level
         self.name = name

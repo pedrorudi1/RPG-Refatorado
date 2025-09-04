@@ -1,5 +1,7 @@
 import MagicsClass
+from Models import Heroes, Enemies
 
+# Attack Magics
 fireball = MagicsClass.AttackMagic("Fireball", 1.1, "Single", "Fire")
 fireblast = MagicsClass.AttackMagic("Fireblast", 1.25, "Single", "Fire")
 explosion = MagicsClass.AttackMagic("Explosion", 1.75, "All", "Fire")
@@ -18,3 +20,47 @@ dark = MagicsClass.AttackMagic("Dark", 2.0, "Single", "Dark")
 comet = MagicsClass.AttackMagic("Comet", 1.75, "Single", "Non-Elemental")
 meteor = MagicsClass.AttackMagic("Meteor", 2.5, "All", "Non-Elemental")
 ultima = MagicsClass.AttackMagic("Ultima", 3.0, "All", "Non-Elemental")
+
+
+# Heal Magics
+cure = MagicsClass.HealMagic("Cure", 1.0, "Single")
+cura = MagicsClass.HealMagic("Cura", 1.5, "Single")
+curaga = MagicsClass.HealMagic("Curaga", 2.0, "All")
+regen = MagicsClass.HealMagic("Regen", 0.5, "Single")
+regen_all = MagicsClass.HealMagic("Regen All", 0.5, "All")
+esuna = MagicsClass.HealMagic("Esuna", 0, "Single")
+revive = MagicsClass.HealMagic("Revive", 0, "Single")
+revive_all = MagicsClass.HealMagic("Revive All", 0, "All")
+
+
+# Buff Magics
+protect = MagicsClass.BuffMagic("Protect", Heroes.vitality, 1.35, 3)
+shell = MagicsClass.BuffMagic("Shell", Heroes.spirit, 1.35, 3)
+haste = MagicsClass.BuffMagic("Haste", Heroes.agility, 1.35, 3)
+bravery = MagicsClass.BuffMagic("Bravery", Heroes.strenght, 1.25, 3)
+faith = MagicsClass.BuffMagic("Faith", Heroes.magic, 1.25, 3)
+reflect = MagicsClass.BuffMagic("Reflect", "Magic Reflect", 1.0, 3)
+
+# Debuff Magics
+slow = MagicsClass.DebuffMagic("Slow", Enemies.agility, 0.75, 3)
+weak = MagicsClass.DebuffMagic("Weak", Enemies.strenght, 0.75, 3)
+silence = MagicsClass.DebuffMagic("Silence", Enemies.magic, 0.0, 3)
+poison = MagicsClass.DebuffMagic("Poison", Enemies.HP, 0.9, 3)
+blind = MagicsClass.DebuffMagic("Blind", Enemies.luck, 0.5, 3)
+sleep = MagicsClass.DebuffMagic("Sleep", Enemies.HP, 0.0, 2)
+death = MagicsClass.DebuffMagic("Death", Enemies.HP, 0.0, 1)
+
+
+# Summon Magics
+ifrit = MagicsClass.SummonMagic("Ifrit", "Ifrit", 2.0, "Fire")
+shiva = MagicsClass.SummonMagic("Shiva", "Shiva", 2.0, "Ice")
+ramuh = MagicsClass.SummonMagic("Ramuh", "Ramuh", 2.0, "Lightning")
+gaia = MagicsClass.SummonMagic("Gaia", "Gaia", 2.0, "Earth")
+leviathan = MagicsClass.SummonMagic("Leviathan", "Leviathan", 2.0, "Ice")
+siren = MagicsClass.SummonMagic("Siren", "Siren", 2.0, "Wind")
+phoenix = MagicsClass.SummonMagic("Phoenix", "Phoenix", 2.0, "Fire")
+alexander = MagicsClass.SummonMagic("Alexander", "Alexander", 3.5, "Light")
+bahamut = MagicsClass.SummonMagic("Bahamut", "Bahamut", 3.5, "Non-Elemental")
+angel = MagicsClass.SummonMagic("Angel", "Angel", 3.0, "Light")
+demon = MagicsClass.SummonMagic("Demon", "Demon", 3.0, "Dark")
+devil = MagicsClass.SummonMagic("Devil", "Devil", 3.0, "Dark")
