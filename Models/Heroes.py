@@ -1,8 +1,8 @@
 import random
-from Magics.MagicsList import *
-from Skills.SkillsList import *
+
 
 class HeroesClass:
+    
     MAX_HP = 9999
     MAX_MP = 999
     MAX_STATS = 255
@@ -74,6 +74,8 @@ class Hero(HeroesClass):
         self.skills = []
     
     def lvl_up(self):
+        from Skills.SkillsList import slash, double_slash, power_slash, slash_all, critical_strike, heal, heal_all as skills
+        self.learn_skill(skills)
         self.HP += random.randrange(round((20 + (0.02 * self.luck))), 150)
         if self.HP >= self.MAX_HP:
             self.HP = self.MAX_HP
@@ -98,34 +100,37 @@ class Hero(HeroesClass):
         self.luck += random.randrange(round((1 + (0.004 * self.luck))), 4)
         if self.luck >= self.MAX_STATS:
             self.luck = self.MAX_STATS
-    
+        self.list_skills()
+
     def gain_xp(self, amount):
         self.XP += amount
         while self.XP >= self.XP_to_next_level and self.level < 99:
             self.XP -= self.XP_to_next_level
             self.level += 1
             self.lvl_up()
-            self.learn_skill()
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
-    def learn_skill(self, skill):
-        if self.level >= 8 and skill not in self.skills:
+    def learn_skill(self):
+        from Skills.SkillsList import slash, double_slash, power_slash, slash_all, critical_strike, heal, heal_all
+
+        if self.level >= 8 and slash not in self.skills:
             self.skills.append(slash)
-        if self.level >= 10 and skill not in self.skills:
+        if self.level >= 10 and heal not in self.skills:
             self.skills.append(heal)
-        if self.level >= 12 and skill not in self.skills:
+        if self.level >= 12 and double_slash not in self.skills:
             self.skills.append(double_slash)
-        if self.level >= 18 and skill not in self.skills:
+        if self.level >= 18 and power_slash not in self.skills:
             self.skills.append(power_slash)
-        if self.level >= 25 and skill not in self.skills:
+        if self.level >= 25 and slash_all not in self.skills:
             self.skills.append(slash_all)
-        if self.level >= 30 and skill not in self.skills:
+        if self.level >= 30 and heal_all not in self.skills:
             self.skills.append(heal_all)
-        if self.level >= 35 and skill not in self.skills:
+        if self.level >= 35 and critical_strike not in self.skills:
             self.skills.append(critical_strike)
 
 
 class Warrior(HeroesClass):
+
     def __init__(self, level, name, HP, MP, strenght, magic, vitality, spirit, agility, luck, XP, XP_to_next_level):
         self.level = level
         self.name = name
@@ -177,6 +182,8 @@ class Warrior(HeroesClass):
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
     def learn_skill(self, skill):
+        from Skills.SkillsList import cover, bash, war_cry, defensive_stance, retaliate, war_shout, maximum_impact
+
         if self.level >= 5 and skill not in self.skills:
             self.skills.append(cover)
         if self.level >= 8 and skill not in self.skills:
@@ -245,6 +252,8 @@ class Mage(HeroesClass):
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
     def learn_skill(self, skill):
+        from Skills.SkillsList import mind_boost, spirit_boost, elemental_strike, firewall, kabum, blessing, study
+
         if self.level >= 8 and skill not in self.skills:
             self.skills.append(mind_boost)
         if self.level >= 9 and skill not in self.skills:
@@ -313,6 +322,8 @@ class Fighter(HeroesClass):
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
     def learn_skill(self, skill):
+        from Skills.SkillsList import power_punch, fury_swipes, iron_fist, adrenaline_rush, tough_skin, head_butt, final_blow
+
         if self.level >= 8 and skill not in self.skills:
             self.skills.append(power_punch)
         if self.level >= 9 and skill not in self.skills:
@@ -381,6 +392,8 @@ class Thief(HeroesClass):
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
     def learn_skill(self, skill):
+        from Skills.SkillsList import steal, backstab, poison_dart, mug, evasion, quick_strike, shadow_step, assassinate
+
         if self.level >= 3 and skill not in self.skills:
             self.skills.append(steal)
         if self.level >= 9 and skill not in self.skills:
@@ -450,6 +463,8 @@ class Priest(HeroesClass):
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
     def learn_skill(self, skill):
+        from Skills.SkillsList import cure, cure_all, holy_light, divine_shield, protect, resurrect, sanctuary, judgment
+
         if self.level >= 5 and skill not in self.skills:
             self.skills.append(cure)
         if self.level >= 9 and skill not in self.skills:
@@ -519,6 +534,8 @@ class Ninja(HeroesClass):
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
     def learn_skill(self, skill):
+        from Skills.SkillsList import shuriken_throw, shadow_clone, quick_slash, silent_kill, ultimate_technique
+
         if self.level >= 5 and skill not in self.skills:
             self.skills.append(shuriken_throw)
         if self.level >= 9 and skill not in self.skills:
