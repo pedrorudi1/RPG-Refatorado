@@ -1,5 +1,5 @@
 class AttackMagic:
-    def __init__(self, name, strength, target, element):
+    def __init__(self, name: str, strength: float, target: enumerate, element: str):
         self.name = name
         self.strength = strength
         self.target = target
@@ -7,21 +7,14 @@ class AttackMagic:
 
 
 class HealMagic:
-    def __init__(self, name, strength, target):
+    def __init__(self, name: str, strength: float, target: enumerate):
         self.name = name
         self.strength = strength
         self.target = target
 
 
-class SupportMagic:
-    def __init__(self, name, effect, target):
-        self.name = name
-        self.effect = effect
-        self.target = target
-
-
 class BuffMagic:
-    def __init__(self, name, attribute, increase, duration):
+    def __init__(self, name: str, attribute, increase, duration):
         self.name = name
         self.attribute = attribute
         self.increase = increase
@@ -29,7 +22,7 @@ class BuffMagic:
 
 
 class DebuffMagic:
-    def __init__(self, name, attribute, decrease, duration):
+    def __init__(self, name: str, attribute, decrease, duration):
         self.name = name
         self.attribute = attribute
         self.decrease = decrease
@@ -37,7 +30,7 @@ class DebuffMagic:
 
 
 class SummonMagic:
-    def __init__(self, name, creature, strength, element):
+    def __init__(self, name: str, creature: str, strength: float, element):
         self.name = name
         self.creature = creature
         self.strenght = strength

@@ -1,4 +1,5 @@
 import random
+from Magics.MagicsList import *
 
 class Personagens:
     MAX_HP = 9999
