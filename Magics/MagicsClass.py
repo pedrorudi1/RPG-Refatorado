@@ -6,6 +6,7 @@ class AttackMagic:
         self.target = target
         self.element = element
 
+    
 
 class HealMagic:
     def __init__(self, name: str, strength: float, target: enumerate):

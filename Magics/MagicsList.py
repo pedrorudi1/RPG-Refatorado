@@ -1,5 +1,5 @@
-import MagicsClass
-from Models import Heroes, Enemies
+from Magics import MagicsClass
+from Models.Heroes import HeroesClass, Enemies
 
 # Attack Magics
 fireball = MagicsClass.AttackMagic("Fireball", 1.1, "Single", "Fire")
@@ -34,11 +34,11 @@ revive_all = MagicsClass.HealMagic("Revive All", 0, "All")
 
 
 # Buff Magics
-protect = MagicsClass.BuffMagic("Protect", Heroes.vitality, 1.35, 3)
-shell = MagicsClass.BuffMagic("Shell", Heroes.spirit, 1.35, 3)
-haste = MagicsClass.BuffMagic("Haste", Heroes.agility, 1.35, 3)
-bravery = MagicsClass.BuffMagic("Bravery", Heroes.strenght, 1.25, 3)
-faith = MagicsClass.BuffMagic("Faith", Heroes.magic, 1.25, 3)
+protect = MagicsClass.BuffMagic("Protect", HeroesClass.vitality, 1.35, 3)
+shell = MagicsClass.BuffMagic("Shell", HeroesClass.spirit, 1.35, 3)
+haste = MagicsClass.BuffMagic("Haste", HeroesClass.agility, 1.35, 3)
+bravery = MagicsClass.BuffMagic("Bravery", HeroesClass.strenght, 1.25, 3)
+faith = MagicsClass.BuffMagic("Faith", HeroesClass.magic, 1.25, 3)
 reflect = MagicsClass.BuffMagic("Reflect", "Magic Reflect", 1.0, 3)
 
 # Debuff Magics

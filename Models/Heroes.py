@@ -51,6 +51,9 @@ class HeroesClass:
     def use_magic(self, magic):
         self.MP -= magic.MP_cost
 
+    def list_skills(self):
+        return [skill.name for skill in self.skills]
+
 
 class Hero(HeroesClass):
     
@@ -102,6 +105,7 @@ class Hero(HeroesClass):
             self.XP -= self.XP_to_next_level
             self.level += 1
             self.lvl_up()
+            self.learn_skill()
             self.XP_to_next_level = int(self.XP_to_next_level * 1.15)
 
     def learn_skill(self, skill):
